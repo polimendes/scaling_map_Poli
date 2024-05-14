@@ -1,0 +1,8 @@
+name: "carto_voyager"
+src_type: "L.tileLayer"
+link: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
+base_layer: true
+options : 
+  zIndex: 1
+  zoomControl: false
+script_src: "../js/main_map.js"

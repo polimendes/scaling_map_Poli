@@ -1,0 +1,65 @@
+{{/*  {{ .Params := . }}  */}}
+
+{{/*  {{ range $index, $layer := .Site.Data.layers }}
+
+  <input type="hidden" class="layers" layer-id="{{$index}}" layer-name="{{$layer.name}}" base-layer="{{$layer.base_layer}}" {{ printf "layer-src=%q" $layer.link | safeHTMLAttr }} layer-type="{{$layer.src_type}}">
+
+  {{ range $ind, $opt := $layer.options }} 
+    <input type="hidden" class="layer-options" layer="{{$layer.name}}" opt-name="{{ $ind }}" opt-value="{{ $opt }}">
+  {{ end }}
+
+  {{ range $ind, $opt := $layer.style }}
+    <input type="hidden" class="layer-style" layer="{{$layer.name}}" style-name="{{ $ind }}" style-value="{{ $opt }}">
+  {{ end }}
+  
+{{ end }}  */}}
+
+<section class='{{ replaceRE "(\\s)" "_" .Params.name }} {{ .Params.name }}-bg-img wide-over-bg {{ .Params.class }}' data-scene="{{ .Params.name }}" lat="{{ .Params.lat }}" lng="{{ .Params.lng }}" zoom="{{ .Params.zoom }}" layers="{{ .Params.layers }}" init-js="{{ .Params.init_js }}">
+
+  {{ if .Params.splash }}
+  <div class="section-splash justify-content-center text-center">
+    {{ if .Params.title }}
+    <h1>{{ .Params.title }}</h1>
+    {{ end }}
+
+    {{/*  {{ if .Params.subtitle }}
+    <h2>{{ .Params.subtitle }}</h2>
+    {{ end }}  */}}
+
+    {{ if .Params.subtitle }}
+    <p>{{ .Params.subtitle | markdownify }}</p>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <div class="card mx-auto">
+    <div class="card-body">{{ .Content }}</div>
+
+    {{/*  {{ if .Params.left_markdown }}
+    <div class="card-body">{{ .Params.left_markdown | markdownify}}</div>
+
+    {{ end }}
+    {{ if .Params.body_md }}
+    <div class="card-body">{{ .Params.body_md | markdownify}}</div>
+    {{ if .Params.body_html }}
+
+    <iframe src="{{ .Params.body_html }}" width="{{ .Params.body_html_width }}" height="{{ .Params.body_html_height }}"
+      style="border:none;" class="{{ .Params.body_html_class}}"></iframe>
+    {{end}}
+    {{ end }}
+    {{ if .Params.left_html }}
+
+    <iframe src="{{ .Params.left_html }}" width="{{ .Params.left_html_width }}" height="{{ .Params.left_html_height }}"
+      style="border:none;" class="{{ .Params.left_html_class}}"></iframe>
+    {{end}}  */}}
+  </div>
+
+  <div></div>
+  {{ if .Params.attribution }}
+  <div class="attribution">{{ .Params.attribution }}</div>
+  {{end}}
+</section>
+{{/*  
+<section class='{{ replaceRE "(\\s)" "_" .Params.name }} {{ .Params.name }}-bg-img wide-over-bg {{ .Params.class }}' data-scene="{{ .Params.name }}" data-background="{{ .Params.background_media }}" lat="{{ .Params.lat }}" lng="{{ .Params.lng }}" zoom="{{ .Params.zoom }}" layers="{{ .Params.layers }}" init-js="{{ .Params.init_js }}">
+
+<section class="{{ replaceRE "(\\s)" "_" .Params.name }}"  data-scene="{{ .Params.name }}" lat="{{ .Params.lat }}" lng="{{ .Params.lng }}" zoom="{{ .Params.zoom }}" layers="{{ .Params.layers }}" init-js="{{ .Params.init_js}}"></section>  */}}

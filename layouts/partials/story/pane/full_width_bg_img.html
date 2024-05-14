@@ -1,0 +1,27 @@
+<section class='{{ replaceRE "(\\s)" "_" .Params.name }} {{ .Params.name }}-bg-img wide-over-bg {{ .Params.class }}' data-scene="{{ .Params.name }}" lat="{{ .Params.lat }}" lng="{{ .Params.lng }}" zoom="{{ .Params.zoom }}" layers="" init-js="{{ .Params.init_js }}" data-background="{{ .Params.background_media }}" >
+
+    {{ if .Params.splash }}
+    <div class="section-splash justify-content-center text-center fullscreen">
+      {{ if .Params.title }}
+      <h1>{{ .Params.title }}</h1>
+      {{ end }}
+  
+      {{/*  {{ if .Params.subtitle }}
+      <h2>{{ .Params.subtitle }}</h2>
+      {{ end }}  */}}
+  
+      {{ if .Params.subtitle }}
+      <p>{{ .Params.subtitle | markdownify }}</p>
+      {{ end }}
+    </div>
+    {{ end }}
+  
+    <div class="card mx-auto">
+      <div class="card-body">{{ .Content }}</div>
+    </div>
+  
+    <div></div>
+    {{ if .Params.attribution }}
+    <div class="attribution">{{ .Params.attribution }}</div>
+    {{end}}
+  </section>

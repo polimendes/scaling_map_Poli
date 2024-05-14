@@ -1,0 +1,49 @@
+<input type="hidden" id="language" value="{{ $.Language.Lang}}">
+
+{{ range $index, $layer := .Site.Data.layers }}
+  <input type="hidden" class="layers" layer-id="{{$index}}" layer-name="{{$layer.name}}" base-layer="{{$layer.base_layer}}" {{ printf "layer-src=%q" $layer.link | safeHTMLAttr }} layer-type="{{$layer.src_type}}">
+  {{ range $ind, $opt := $layer.options }} 
+    <input type="hidden" class="layer-options" layer="{{$layer.name}}" opt-name="{{ $ind }}" opt-value="{{ $opt }}">
+  {{ end }}
+  {{ range $ind, $opt := $layer.style }}
+    <input type="hidden" class="layer-style" layer="{{$layer.name}}" style-name="{{ $ind }}" style-value="{{ $opt }}">
+  {{ end }}
+{{ end }}
+
+{{/*  {{ range $index, $section := sort .Pages "weight" }}  */}}
+                {{/*  {{/*  {{ range .Pages.ByTitle }}   */}}
+{{ range sort .Pages .Params.weight }}
+{{/*  {{ range .Pages "weight" }}  */}}
+    {{ if .Params.visible }}
+        {{ if eq .Params.layout "float_left" }}
+            {{- partial "legacy/story/float_left.html" . -}}
+        {{ else if eq .Params.layout "full_html" }}
+            {{- partial "legacy/story/full_html.html" . -}}
+        {{ else if eq .Params.layout "splash" }}
+            {{- partial "legacy/story/splash.html" . -}}
+        {{ else if eq .Params.layout "splash_md" }}
+            {{- partial "legacy/story/splash_md.html" . -}}
+        {{ else if eq .Params.layout "fullscreen" }}
+            {{- partial "legacy/story/fullscreen.html" . -}}
+        {{ else if eq .Params.layout "full_width" }}
+            {{- partial "legacy/story/full_width.html" . -}}
+        {{ else if eq .Params.layout "accordion" }}
+            {{- partial "legacy/story/accordion.html" . -}}
+        {{ else if eq .Params.layout "carousel" }}
+            {{- partial "legacy/story/carousel.html" . -}}
+        {{ else if eq .Params.layout "full_width_inset" }}
+            {{- partial "legacy/story/full_width_inset.html" . -}}
+        {{ else if eq .Params.layout "wide_over_bg" }}
+            {{- partial "story/pane/wide_over_bg.html" . -}}
+        {{ else if eq .Params.layout "full_width_bg_img" }}
+            {{- partial "story/pane/full_width_bg_img.html" . -}}
+        {{ else if eq .Params.layout "float_card" }}
+            {{- partial "story/pane/float_card.html" . -}}
+        {{ else if eq .Params.layout "init" }}
+            {{- partial "story/pane/init.html" . -}}
+        {{/*  {{ else }}  */}}
+            {{/*  {{- partial "legacy/story/float_left.html" . -}}  */}}
+        {{ end }}
+    {{/*  </section>  */}}
+    {{ end }}
+{{ end }}

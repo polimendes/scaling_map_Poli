@@ -1,0 +1,7 @@
+<section class="{{ replaceRE "(\\s)" "_" .Params.name }}"  data-scene="{{ .Params.name }}" lat="{{ .Params.lat }}" lng="{{ .Params.lng }}" zoom="{{ .Params.zoom }}" layers="{{ .Params.layers }}" init-js="{{ .Params.init_js}}" style="background-image:url('{{ .Params.background_img }}')">
+    <div class="card mx-auto">
+        <div class="card-body">
+            {{ .Content }}
+        </div>
+    </div>
+</section>

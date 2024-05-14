@@ -1,0 +1,8 @@
+name: "osm_mapnik"
+src_type: "L.tileLayer"
+link: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+base_layer: true
+options : 
+  zIndex: 1
+  zoomControl: false
+script_src: "../js/main_map.js"

@@ -1,0 +1,15 @@
+{{ $section := . }}
+
+{{ range $index, $layer := .Site.Data.layers }}
+  <input type="hidden" class="layers" layer-id="{{$index}}" layer-name="{{$layer.name}}" base-layer="{{$layer.base_layer}}" {{ printf "layer-src=%q" $layer.link | safeHTMLAttr }} layer-type="{{$layer.src_type}}">
+  {{ range $ind, $opt := $layer.options }} 
+    <input type="hidden" class="layer-options" layer="{{$layer.name}}" opt-name="{{ $ind }}" opt-value="{{ $opt }}">
+  {{ end }}
+  {{ range $ind, $opt := $layer.style }}
+    <input type="hidden" class="layer-style" layer="{{$layer.name}}" style-name="{{ $ind }}" style-value="{{ $opt }}">
+  {{ end }}
+{{ end }}
+
+<section class='{{ replaceRE "(\\s)" "_" $section.name }} init {{ $section.class }}'  data-scene="{{ $section.name }}" data-background="{{ $section.background_media }}" lat="{{ $section.lat }}" lng="{{ $section.lng }}" zoom="{{ $section.zoom }}" layers="{{ $section.layers }}" init-js="{{ $section.init_js }}">
+    <div>init</div>
+</section>

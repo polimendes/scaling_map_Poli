@@ -1,0 +1,8 @@
+name: "esri_imagery"
+src_type: "L.tileLayer"
+link: "http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+base_layer: true
+options : 
+  zIndex: 1
+  zoomControl: false
+script_src: "../js/main_map.js"

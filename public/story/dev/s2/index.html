@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=33419&amp;path=livereload" data-no-instant defer></script>
+
+    <title>HQP Scaling TITLE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    
+    <link rel="shortcut icon" href=/img/favicon.ico type="image/x-icon">
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href=/css/storymap.2.5.css>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+
+    
+    <script src=/js/maki-markers/Leaflet.MakiMarkers.js></script>
+
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+		
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel='stylesheet' type='text/css'>
+
+
+	
+    <script src=/js/storymap.2.5.js></script>
+
+
+    <link href=/css/style.css rel="stylesheet">
+    <script src=/js/map-story.js></script>
+
+    
+
+    <script src=/js/monteregie_map.js></script>
+    <script src=/js/main_map.js></script>
+    <script src=/js/carly_map.js></script>
+    
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+      
+      <script src="/js/monteregie_map.js"></script>
+      
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+      
+      <script src="/js/carly_map.js"></script>
+      
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+      
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+
+</head>
+	<body>
+	
+	
+
+	<div id="storymap" class="container-fluid">
+	    <div class="row">
+	        <div class="col-sm-6 col-md-8 storymap-map"></div>
+	        <div class="col-sm-6 col-md-4 storymap-story">
+                <input type="hidden" id="language" value="en">
+
+
+  <input type="hidden" class="layers" layer-id="c2d" layer-name="c2d_watershed" base-layer="false" layer-src="https://data.nsercresnet.ca/geoserver/ows" layer-type="L.tileLayer.wms">
+   
+    <input type="hidden" class="layer-options" layer="c2d_watershed" opt-name="format" opt-value="image/png">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="carly_map" layer-name="carly_map" base-layer="false" layer-src="https://cartodb.ecoconnect.net/user/resnet-admin/api/v2/sql?q=SELECT * FROM carly_carbon&api_key=_mn4R8PisfU7Y-3lBWmHMw&format=geojson" layer-type="L.geoJson.ajax">
+   
+    <input type="hidden" class="layer-options" layer="carly_map" opt-name="opacity" opt-value="0.2">
+   
+    <input type="hidden" class="layer-options" layer="carly_map" opt-name="weight" opt-value="3">
+   
+    <input type="hidden" class="layer-options" layer="carly_map" opt-name="zIndex" opt-value="999">
+  
+  
+    <input type="hidden" class="layer-style" layer="carly_map" style-name="color" style-value="#99c63d">
+  
+    <input type="hidden" class="layer-style" layer="carly_map" style-name="fillColor" style-value="#99c63d">
+  
+    <input type="hidden" class="layer-style" layer="carly_map" style-name="fillOpacity" style-value="0.3">
+  
+    <input type="hidden" class="layer-style" layer="carly_map" style-name="opacity" style-value="0.2">
+  
+    <input type="hidden" class="layer-style" layer="carly_map" style-name="stroke" style-value="true">
+  
+    <input type="hidden" class="layer-style" layer="carly_map" style-name="strokeOpacity" style-value="1">
+  
+
+  <input type="hidden" class="layers" layer-id="carto_darkmatter" layer-name="carto_darkmatter" base-layer="true" layer-src="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="carto_darkmatter" opt-name="zIndex" opt-value="1">
+   
+    <input type="hidden" class="layer-options" layer="carto_darkmatter" opt-name="zoomControl" opt-value="false">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="carto_positron" layer-name="carto_positron" base-layer="true" layer-src="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="carto_positron" opt-name="zIndex" opt-value="1">
+   
+    <input type="hidden" class="layer-options" layer="carto_positron" opt-name="zoomControl" opt-value="false">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="carto_voyager" layer-name="carto_voyager" base-layer="true" layer-src="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="carto_voyager" opt-name="zIndex" opt-value="1">
+   
+    <input type="hidden" class="layer-options" layer="carto_voyager" opt-name="zoomControl" opt-value="false">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="esri_imagery" layer-name="esri_imagery" base-layer="true" layer-src="http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="esri_imagery" opt-name="zIndex" opt-value="1">
+   
+    <input type="hidden" class="layer-options" layer="esri_imagery" opt-name="zoomControl" opt-value="false">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="esri_topo" layer-name="esri_topo" base-layer="true" layer-src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="esri_topo" opt-name="zIndex" opt-value="1">
+   
+    <input type="hidden" class="layer-options" layer="esri_topo" opt-name="zoomControl" opt-value="false">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="google_satellite" layer-name="google_satellite" base-layer="true" layer-src="https://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="google_satellite" opt-name="zIndex" opt-value="1">
+   
+    <input type="hidden" class="layer-options" layer="google_satellite" opt-name="zoomControl" opt-value="false">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="monteregie_municipalities" layer-name="monteregie_municipalities" base-layer="false" layer-src="https://cartodb.ecoconnect.net/user/resnet-admin/api/v2/sql?q=SELECT the_geom, mus_nm_mun FROM munic_shp_clean_1&api_key=_mn4R8PisfU7Y-3lBWmHMw&format=geojson" layer-type="L.geoJson.ajax">
+   
+    <input type="hidden" class="layer-options" layer="monteregie_municipalities" opt-name="opacity" opt-value="0.2">
+   
+    <input type="hidden" class="layer-options" layer="monteregie_municipalities" opt-name="weight" opt-value="3">
+   
+    <input type="hidden" class="layer-options" layer="monteregie_municipalities" opt-name="zIndex" opt-value="999">
+  
+  
+    <input type="hidden" class="layer-style" layer="monteregie_municipalities" style-name="color" style-value="#99c63d">
+  
+    <input type="hidden" class="layer-style" layer="monteregie_municipalities" style-name="fillColor" style-value="#99c63d">
+  
+    <input type="hidden" class="layer-style" layer="monteregie_municipalities" style-name="fillOpacity" style-value="0.3">
+  
+    <input type="hidden" class="layer-style" layer="monteregie_municipalities" style-name="opacity" style-value="0.2">
+  
+    <input type="hidden" class="layer-style" layer="monteregie_municipalities" style-name="stroke" style-value="true">
+  
+    <input type="hidden" class="layer-style" layer="monteregie_municipalities" style-name="strokeOpacity" style-value="1">
+  
+
+  <input type="hidden" class="layers" layer-id="osm_mapnik" layer-name="osm_mapnik" base-layer="true" layer-src="https://tile.openstreetmap.org/{z}/{x}/{y}.png" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="osm_mapnik" opt-name="zIndex" opt-value="1">
+   
+    <input type="hidden" class="layer-options" layer="osm_mapnik" opt-name="zoomControl" opt-value="false">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="stamen_bw" layer-name="stamen_bw" base-layer="false" layer-src="https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="stamen_bw" opt-name="zIndex" opt-value="1">
+  
+  
+
+
+
+                
+
+                
+	        </div>
+	    </div>
+	</div>
+	</body>
+</html>

@@ -1,0 +1,95 @@
+
+{{ $sections := sort .Site.Data.sections "weight" }}
+{{ $sections := sort (where $sections "visible" "eq" true) "weight" }}
+
+{{/*  doesn't work straight from Data.sections...
+{{ $sections_visible := sort (where .Site.Data.sections  "visible" "eq" true) "weight" }}  */}}
+
+{{ $menu_group_list :=  slice }}
+{{ range where $sections "menu_group" "!=" nil}}
+	{{ $menu_group_list = $menu_group_list | append .menu_group }}
+{{ end }}
+{{ $menu_group_list = $menu_group_list | uniq }}
+
+{{/*  <p>testhere</p>
+<p>{{ $menu_group_list_test }}</p>  */}}
+{{/*  <p>{{ $sections_test }}</p>  */}}
+{{/*  
+
+<p>testhere</p>
+{{ $testsec := sort (where .Site.Data.sections "visible" "eq" true) "weight" }}
+{{ range $testsec }}
+ <p>test</p>
+ <p>{{  .visible  }}</p>
+ <p>{{  .weight  }}</p>
+ <p>{{  .menu_group  }}</p>
+ <p>{{  .menu_name  }}</p>
+
+{{ end }}  */}}
+
+{{/*  {{ $testgroups := $testsec | map: ".menu_group" | uniq }}  */}}
+
+<nav id="main-navbar" class="navbar navbar-expand-lg fixed-top navbar-dark bg-navbar storymap-navbar">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#">
+			<i class="fa fa-home" style="padding-right:10px;"></i>
+			Scaling of Ecosystem Services
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				{{ range $menu_group_name := $menu_group_list }}
+					<li class="nav-item dropdown nav-{{ . }}" section-name="{{ . }}">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							{{ . }}
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+							{{ range where $sections "menu_group" "in" $menu_group_name  }}
+								{{ if .disabled}}
+									<li><i><a class="dropdown-item disabled" tabindex="-1" aria-disabled="true" tabindex="-1" aria-disabled="true" href="javascript:window.scrollBy(0, $('section[data-scene=\'{{ .name }}\']').offset().top - $(window).scrollTop() - $('.storymap-navbar').height() - 30);">
+										{{ .menu_name }}
+									</a></i></li>
+								{{ else }}
+									<li><a class="dropdown-item" href="javascript:window.scrollBy(0, $('section[data-scene=\'{{ .name }}\']').offset().top - $(window).scrollTop() - $('.storymap-navbar').height() - 30);">
+										{{ .menu_name }}
+									</a></li>
+								{{ end }}
+								{{/*  <li><hr class="dropdown-divider"></li>  */}}
+
+							{{ end }}
+						</ul>
+					</li>
+				{{ end }}
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+{{/*  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+	<div class="container-fluid">
+	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <a class="navbar-brand" href="#">Navbar</a>
+	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		  <li class="nav-item">
+			<a class="nav-link active" aria-current="page" href="#">Home</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Link</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+		  </li>
+		</ul>
+		<form class="d-flex">
+		  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+		  <button class="btn btn-outline-success" type="submit">Search</button>
+		</form>
+	  </div>
+	</div>
+  </nav>  */}}

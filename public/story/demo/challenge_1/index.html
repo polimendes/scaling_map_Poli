@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=33419&amp;path=livereload" data-no-instant defer></script>
+
+    <title>HQP Scaling TITLE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    
+    <link rel="shortcut icon" href=/img/favicon.ico type="image/x-icon">
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href=/css/storymap.2.5.css>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+
+    
+    <script src=/js/maki-markers/Leaflet.MakiMarkers.js></script>
+
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+		
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel='stylesheet' type='text/css'>
+
+
+	
+    <script src=/js/storymap.2.5.js></script>
+
+
+    <link href=/css/style.css rel="stylesheet">
+    <script src=/js/map-story.js></script>
+
+    
+
+    <script src=/js/monteregie_map.js></script>
+    <script src=/js/main_map.js></script>
+    <script src=/js/carly_map.js></script>
+    
+    
+      
+      <script src="/js/monteregie_map.js"></script>
+      
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+      
+      <script src="/js/carly_map.js"></script>
+      
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+      
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+      
+      <script src="/js/main_map.js"></script>
+      
+    
+
+</head>
+	<body>
+	
+	
+
+	<div id="storymap" class="container-fluid">
+	    <div class="row">
+	        <div class="col-sm-6 col-md-8 storymap-map"></div>
+	        <div class="col-sm-6 col-md-4 storymap-story">
+                <input type="hidden" id="language" value="en">
+
+
+  <input type="hidden" class="layers" layer-id="c2d" layer-name="c2d_watershed" base-layer="false" layer-src="https://data.nsercresnet.ca/geoserver/ows" layer-type="L.tileLayer.wms">
+   
+    <input type="hidden" class="layer-options" layer="c2d_watershed" opt-name="format" opt-value="image/png">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="carly_map" layer-name="carly_map" base-layer="false" layer-src="https://cartodb.ecoconnect.net/user/resnet-admin/api/v2/sql?q=SELECT * FROM carly_carbon&api_key=_mn4R8PisfU7Y-3lBWmHMw&format=geojson" layer-type="L.geoJson.ajax">
+   
+    <input type="hidden" class="layer-options" layer="carly_map" opt-name="opacity" opt-value="0.2">
+   
+    <input type="hidden" class="layer-options" layer="carly_map" opt-name="weight" opt-value="3">
+   
+    <input type="hidden" class="layer-options" layer="carly_map" opt-name="zIndex" opt-value="999">
+  
+  
+    <input type="hidden" class="layer-style" layer="carly_map" style-name="color" style-value="#99c63d">
+  
+    <input type="hidden" class="layer-style" layer="carly_map" style-name="fillColor" style-value="#99c63d">
+  
+    <input type="hidden" class="layer-style" layer="carly_map" style-name="fillOpacity" style-value="0.3">
+  
+    <input type="hidden" class="layer-style" layer="carly_map" style-name="opacity" style-value="0.2">
+  
+    <input type="hidden" class="layer-style" layer="carly_map" style-name="stroke" style-value="true">
+  
+    <input type="hidden" class="layer-style" layer="carly_map" style-name="strokeOpacity" style-value="1">
+  
+
+  <input type="hidden" class="layers" layer-id="carto_darkmatter" layer-name="carto_darkmatter" base-layer="true" layer-src="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="carto_darkmatter" opt-name="zIndex" opt-value="1">
+   
+    <input type="hidden" class="layer-options" layer="carto_darkmatter" opt-name="zoomControl" opt-value="false">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="carto_positron" layer-name="carto_positron" base-layer="true" layer-src="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="carto_positron" opt-name="zIndex" opt-value="1">
+   
+    <input type="hidden" class="layer-options" layer="carto_positron" opt-name="zoomControl" opt-value="false">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="carto_voyager" layer-name="carto_voyager" base-layer="true" layer-src="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="carto_voyager" opt-name="zIndex" opt-value="1">
+   
+    <input type="hidden" class="layer-options" layer="carto_voyager" opt-name="zoomControl" opt-value="false">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="esri_imagery" layer-name="esri_imagery" base-layer="true" layer-src="http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="esri_imagery" opt-name="zIndex" opt-value="1">
+   
+    <input type="hidden" class="layer-options" layer="esri_imagery" opt-name="zoomControl" opt-value="false">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="esri_topo" layer-name="esri_topo" base-layer="true" layer-src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="esri_topo" opt-name="zIndex" opt-value="1">
+   
+    <input type="hidden" class="layer-options" layer="esri_topo" opt-name="zoomControl" opt-value="false">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="google_satellite" layer-name="google_satellite" base-layer="true" layer-src="https://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="google_satellite" opt-name="zIndex" opt-value="1">
+   
+    <input type="hidden" class="layer-options" layer="google_satellite" opt-name="zoomControl" opt-value="false">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="monteregie_municipalities" layer-name="monteregie_municipalities" base-layer="false" layer-src="https://cartodb.ecoconnect.net/user/resnet-admin/api/v2/sql?q=SELECT the_geom, mus_nm_mun FROM munic_shp_clean_1&api_key=_mn4R8PisfU7Y-3lBWmHMw&format=geojson" layer-type="L.geoJson.ajax">
+   
+    <input type="hidden" class="layer-options" layer="monteregie_municipalities" opt-name="opacity" opt-value="0.2">
+   
+    <input type="hidden" class="layer-options" layer="monteregie_municipalities" opt-name="weight" opt-value="3">
+   
+    <input type="hidden" class="layer-options" layer="monteregie_municipalities" opt-name="zIndex" opt-value="999">
+  
+  
+    <input type="hidden" class="layer-style" layer="monteregie_municipalities" style-name="color" style-value="#99c63d">
+  
+    <input type="hidden" class="layer-style" layer="monteregie_municipalities" style-name="fillColor" style-value="#99c63d">
+  
+    <input type="hidden" class="layer-style" layer="monteregie_municipalities" style-name="fillOpacity" style-value="0.3">
+  
+    <input type="hidden" class="layer-style" layer="monteregie_municipalities" style-name="opacity" style-value="0.2">
+  
+    <input type="hidden" class="layer-style" layer="monteregie_municipalities" style-name="stroke" style-value="true">
+  
+    <input type="hidden" class="layer-style" layer="monteregie_municipalities" style-name="strokeOpacity" style-value="1">
+  
+
+  <input type="hidden" class="layers" layer-id="osm_mapnik" layer-name="osm_mapnik" base-layer="true" layer-src="https://tile.openstreetmap.org/{z}/{x}/{y}.png" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="osm_mapnik" opt-name="zIndex" opt-value="1">
+   
+    <input type="hidden" class="layer-options" layer="osm_mapnik" opt-name="zoomControl" opt-value="false">
+  
+  
+
+  <input type="hidden" class="layers" layer-id="stamen_bw" layer-name="stamen_bw" base-layer="false" layer-src="https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png" layer-type="L.tileLayer">
+   
+    <input type="hidden" class="layer-options" layer="stamen_bw" opt-name="zIndex" opt-value="1">
+  
+  
+
+
+
+                
+
+
+    
+        
+
+
+
+<section class='intro intro-bg-img wide-over-bg ' data-scene="intro" lat="55" lng="-97" zoom="5" layers="google_satellite" init-js="">
+
+  
+  <div class="section-splash justify-content-center text-center">
+    
+    <h1>Scaling of Ecosystem Services</h1>
+    
+
+    
+
+    
+    <p><img src="img/resnet_logo4x.png" class="w-25 p-3">  
+<h2 id="nserc-resnet-hqp-scaling-group">NSERC ResNet HQP Scaling Group</h2>
+</p>
+    
+  </div>
+  
+
+  <div class="card mx-auto">
+    <div class="card-body"><h2 id="introduction">Introduction</h2>
+<figure class="w-50 p-3 float-start"><img src="img/test.jpg"><figcaption>
+      <h4>Predation</h4>
+    </figcaption>
+</figure>
+
+<div class="testclass"><img src="img/test.jpg" class="w-50 p-3 float-start"></div>
+<img src="img/test.jpg" class="w-50 p-3 float-start">
+<h2 id="different-scales-are-most-meaningful-for-a-given-decision-or-research-question">Different scale(s) are most meaningful for a given decision or research question</h2>
+<p>We design studies at different scales, because</p>
+<p>(1) decision-makers require data at different spatio-temporal scales and</p>
+<p>(2) scientists seek to understand how ecosystem processes and properties vary across scales.</p>
+<p>There are cost and time constraints to collecting data; therefore, we target the scale most relevant for a given question or decision.</p>
+<p><img src="img/intro/terraincognita.JPG" alt="figure_name"><img src="img/intro/ants.JPG" alt="figure_name"><img src="img/intro/bird.JPG" alt="figure_name"></p>
+<p>*Created by Ágnes Vári. The idea behind this drawing is to start as a decision-maker, researcher, and/or explorer, and show how the view (scale) may change, in a fun way, before we dive into the scientific details. We will finish this sketch after the AGM. *</p>
+<h3 id="defining-terms">Defining terms</h3>
+<p><code>[Placeholder text: We plan to hire an illustrator to create a visual defining the terms: ecosystem service, supply, demand, flow, benefit, etc. There will be one hexagon at a landscape scale and a second hexagon nested behind at a regional scale. We will also add a glossary section for readers to find more information on the terms used in this story map.]</code></p>
+<h3 id="changing-spatial-and-temporal-scales">Changing spatial and temporal scales</h3>
+<p>Often data is only available (or can only be collected) at one scale; however, we need information at a different scale to inform a decision or to understand an ecological process. In the figure below we visualize what it means to increase (a) spatial grain size, (b) spatial extent, (c) temporal resolution, and (d) time period.</p>
+<p><img src="img/intro/IncreasingGrainExtentFig_30Apr2023Part1.png" alt="figure_name"><img src="img/intro/IncreasingGrainExtentFig_30Apr2023Part2.png" alt="figure_name"></p>
+<h3 id="why-do-we-scale-up-or-down">Why do we scale up or down?</h3>
+<p>We may scale up or down for many reasons, including these examples:</p>
+<ol>
+<li>
+<p>It can be expensive, time-consuming, and dangerous to collect data points in the field at every possible location. Instead, we stratify (e.g., partition) a larger landscape into smaller homogenous areas and take representative samples within each group.</p>
+</li>
+<li>
+<p>Ecological processes can be difficult to observe directly, including when processes are too fast, too slow, too small, or too large. We develop models to visualize a reality that is inaccessible to our senses.</p>
+</li>
+<li>
+<p>Management and policy decisions may require data at a different scale (e.g., extent or grain) compared to the scale of available data. For example, we may collect field data about a management intervention at a local scale; however, we may rely on models to test how scaling these interventions could affect outcomes at a larger scale.</p>
+</li>
+<li>
+<p>There are many decision-makers at different (nested) spatial scales, with their own mandates, agendas, and actions. Land-use planning policies are often developed considering scales that represent political needs at regional scales, which may or may not be consistent with ecological and societal needs at local scales. For example, climate change mitigation actions at a national scale, may not address heterogeneous needs at finer scales, for example cooling effects at the neighborhood scale.</p>
+</li>
+</ol>
+</div>
+
+    
+  </div>
+
+  <div></div>
+  
+</section>
+
+    
+    
+
+
+    
+        <section class="intro2"  data-scene="intro2" lat="45.6" lng="-73.8" zoom="9" layers="google_satellite,monteregie_municipalities" init-js="Monteregie_map.init()" style="background-image:url('img/title-bg.jpg')">
+    <div class="card mx-auto">
+        <div class="card-body">
+            <h2 id="two">Two</h2>
+<h1 id="natures-contributions-to-people-a-multi-scale-perspective">Nature’s contributions to people: a multi-scale perspective</h1>
+<p>We, as scientists and researchers, often take a multi-scale perspective to better understand how natural ecosystems improve people’s lives. These beneficial contributions by ecosystems are called Nature’s contributions to people, NCPs. NCPs can also be called nature’s gifts or ecosystem services.</p>
+<p>We are part of <strong><em>ResNet</em></strong>, a network which unites a broad community of scholars, nongovernmental organizations, government agencies, and industry sectors. We work in different regions of Canada, with a common goal of improving how we monitor, model, and manage nature’s contributions to people. In the sections below, together as a subset of members of ResNet, we</p>
+<p>(1) discuss the importance of taking a multi-scale perspective,</p>
+<p>(2) define what we mean by spatial and temporal scales, and</p>
+<p>(3) introduce a few challenges and best practices related to scaling.</p>
+<p>As scientists and researchers, we often design studies at different scales, because</p>
+<p>(1) decision-makers require data at different spatio-temporal scales,</p>
+<p>(2) scientists seek to understand how ecosystem processes and properties vary across scales, and</p>
+<p>(3) there are cost and time constraints to collecting data; therefore, we target the scale most relevant for a given question or decision.</p>
+
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    
+        
+
+
+
+<section class='intro3 intro3-bg-img wide-over-bg ' data-scene="intro3" lat="55" lng="-97" zoom="3" layers="google_satellite, c2d" init-js="">
+
+  
+  <div class="section-splash justify-content-center text-center">
+    
+    <h1>Scaling of Ecosystem Services</h1>
+    
+
+    
+
+    
+  </div>
+  
+
+  <div class="card mx-auto">
+    <div class="card-body"><h1 id="three">Three</h1>
+<h2 id="introduction">Introduction</h2>
+<h2 id="different-scales-are-most-meaningful-for-a-given-decision-or-research-question">Different scale(s) are most meaningful for a given decision or research question</h2>
+<p>We design studies at different scales, because</p>
+<p>(1) decision-makers require data at different spatio-temporal scales and</p>
+<p>(2) scientists seek to understand how ecosystem processes and properties vary across scales.</p>
+<p>There are cost and time constraints to collecting data; therefore, we target the scale most relevant for a given question or decision.</p>
+<p><img src="img/intro/terraincognita.JPG" alt="figure_name"><img src="img/intro/ants.JPG" alt="figure_name"><img src="img/intro/bird.JPG" alt="figure_name"></p>
+<p>*Created by Ágnes Vári. The idea behind this drawing is to start as a decision-maker, researcher, and/or explorer, and show how the view (scale) may change, in a fun way, before we dive into the scientific details. We will finish this sketch after the AGM. *</p>
+<h3 id="defining-terms">Defining terms</h3>
+<p><code>[Placeholder text: We plan to hire an illustrator to create a visual defining the terms: ecosystem service, supply, demand, flow, benefit, etc. There will be one hexagon at a landscape scale and a second hexagon nested behind at a regional scale. We will also add a glossary section for readers to find more information on the terms used in this story map.]</code></p>
+<h3 id="changing-spatial-and-temporal-scales">Changing spatial and temporal scales</h3>
+<p>Often data is only available (or can only be collected) at one scale; however, we need information at a different scale to inform a decision or to understand an ecological process. In the figure below we visualize what it means to increase (a) spatial grain size, (b) spatial extent, (c) temporal resolution, and (d) time period.</p>
+<p><img src="img/intro/IncreasingGrainExtentFig_30Apr2023Part1.png" alt="figure_name"><img src="img/intro/IncreasingGrainExtentFig_30Apr2023Part2.png" alt="figure_name"></p>
+<h3 id="why-do-we-scale-up-or-down">Why do we scale up or down?</h3>
+<p>We may scale up or down for many reasons, including these examples:</p>
+<ol>
+<li>
+<p>It can be expensive, time-consuming, and dangerous to collect data points in the field at every possible location. Instead, we stratify (e.g., partition) a larger landscape into smaller homogenous areas and take representative samples within each group.</p>
+</li>
+<li>
+<p>Ecological processes can be difficult to observe directly, including when processes are too fast, too slow, too small, or too large. We develop models to visualize a reality that is inaccessible to our senses.</p>
+</li>
+<li>
+<p>Management and policy decisions may require data at a different scale (e.g., extent or grain) compared to the scale of available data. For example, we may collect field data about a management intervention at a local scale; however, we may rely on models to test how scaling these interventions could affect outcomes at a larger scale.</p>
+</li>
+<li>
+<p>There are many decision-makers at different (nested) spatial scales, with their own mandates, agendas, and actions. Land-use planning policies are often developed considering scales that represent political needs at regional scales, which may or may not be consistent with ecological and societal needs at local scales. For example, climate change mitigation actions at a national scale, may not address heterogeneous needs at finer scales, for example cooling effects at the neighborhood scale.</p>
+</li>
+</ol>
+</div>
+
+    
+  </div>
+
+  <div></div>
+  
+</section>
+
+    
+    
+
+
+    
+        <section class='intro4 intro4-bg-img wide-over-bg ' data-scene="intro4" lat="55" lng="-97" zoom="3" layers="" init-js="" data-background="img/title-bg.jpg" >
+
+    
+    <div class="section-splash justify-content-center text-center fullscreen">
+      
+      <h1>Scaling of Ecosystem Services</h1>
+      
+  
+      
+  
+      
+    </div>
+    
+  
+    <div class="card mx-auto">
+      <div class="card-body"><h1 id="four">Four</h1>
+<h2 id="introduction">Introduction</h2>
+<h2 id="different-scales-are-most-meaningful-for-a-given-decision-or-research-question">Different scale(s) are most meaningful for a given decision or research question</h2>
+<p>We design studies at different scales, because</p>
+<p>(1) decision-makers require data at different spatio-temporal scales and</p>
+<p>(2) scientists seek to understand how ecosystem processes and properties vary across scales.</p>
+<p>There are cost and time constraints to collecting data; therefore, we target the scale most relevant for a given question or decision.</p>
+<p><img src="img/intro/terraincognita.JPG" alt="figure_name"><img src="img/intro/ants.JPG" alt="figure_name"><img src="img/intro/bird.JPG" alt="figure_name"></p>
+<p>*Created by Ágnes Vári. The idea behind this drawing is to start as a decision-maker, researcher, and/or explorer, and show how the view (scale) may change, in a fun way, before we dive into the scientific details. We will finish this sketch after the AGM. *</p>
+<h3 id="defining-terms">Defining terms</h3>
+<p><code>[Placeholder text: We plan to hire an illustrator to create a visual defining the terms: ecosystem service, supply, demand, flow, benefit, etc. There will be one hexagon at a landscape scale and a second hexagon nested behind at a regional scale. We will also add a glossary section for readers to find more information on the terms used in this story map.]</code></p>
+<h3 id="changing-spatial-and-temporal-scales">Changing spatial and temporal scales</h3>
+<p>Often data is only available (or can only be collected) at one scale; however, we need information at a different scale to inform a decision or to understand an ecological process. In the figure below we visualize what it means to increase (a) spatial grain size, (b) spatial extent, (c) temporal resolution, and (d) time period.</p>
+<p><img src="img/intro/IncreasingGrainExtentFig_30Apr2023Part1.png" alt="figure_name"><img src="img/intro/IncreasingGrainExtentFig_30Apr2023Part2.png" alt="figure_name"></p>
+<h3 id="why-do-we-scale-up-or-down">Why do we scale up or down?</h3>
+<p>We may scale up or down for many reasons, including these examples:</p>
+<ol>
+<li>
+<p>It can be expensive, time-consuming, and dangerous to collect data points in the field at every possible location. Instead, we stratify (e.g., partition) a larger landscape into smaller homogenous areas and take representative samples within each group.</p>
+</li>
+<li>
+<p>Ecological processes can be difficult to observe directly, including when processes are too fast, too slow, too small, or too large. We develop models to visualize a reality that is inaccessible to our senses.</p>
+</li>
+<li>
+<p>Management and policy decisions may require data at a different scale (e.g., extent or grain) compared to the scale of available data. For example, we may collect field data about a management intervention at a local scale; however, we may rely on models to test how scaling these interventions could affect outcomes at a larger scale.</p>
+</li>
+<li>
+<p>There are many decision-makers at different (nested) spatial scales, with their own mandates, agendas, and actions. Land-use planning policies are often developed considering scales that represent political needs at regional scales, which may or may not be consistent with ecological and societal needs at local scales. For example, climate change mitigation actions at a national scale, may not address heterogeneous needs at finer scales, for example cooling effects at the neighborhood scale.</p>
+</li>
+</ol>
+</div>
+    </div>
+  
+    <div></div>
+    
+  </section>
+    
+    
+
+                
+	        </div>
+	    </div>
+	</div>
+	</body>
+</html>
